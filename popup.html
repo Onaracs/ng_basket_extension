@@ -1,0 +1,108 @@
+<!doctype html>
+<html ng-csp ng-app="app">
+<head>
+  <title>Basket</title>
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="/styles/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/styles/note.css">
+  <link rel="stylesheet" href="/styles/display.css">
+  <link rel="stylesheet" href="/styles/nav.css">
+  <link rel="stylesheet" href="/styles/basket_list.css">
+
+  <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  
+  
+  <script type="text/javascript" src="scripts/angular.min.js"></script>
+  <script type="text/javascript" src="scripts/app.js"></script>
+  <script src="scripts/angular-ui-router.min.js"></script>
+  <script src="scripts/jquery.min.js"></script>
+
+  <script type="text/javascript" src="scripts/controllers/shareCtrl.js"></script>
+  <script type="text/javascript" src="scripts/controllers/saveCtrl.js"></script>
+  <script type="text/javascript" src="scripts/controllers/basketCtrl.js"></script>
+
+  <script type="text/javascript" src="scripts/modules/getBaskets.js"></script>
+  <script type="text/javascript" src="scripts/modules/getFriends.js"></script>
+  <!-- <script language='javascript' src='background.js'></script>
+  <script language='javascript' src='popup.js'></script> -->
+</head>
+
+<body ng-controller="toggleCtrl">
+  <div class="container">
+
+    <section name="header">
+      <div class="header-title">
+        <a href="http://www.mybasketsapp.com" target="_newtab">
+          <img src="icons/basketblack128.png">
+          <h3>Basket</h3>
+          <h5>www.mybasketsapp.com</h5>
+        </a>
+      </div>
+    </section>
+
+    <section name="navbar" class="navigation">
+      <ul>
+        <a ui-sref="share">
+          <li class="click-selection friend-select highlight-select">
+              Share
+          </li>
+        </a>
+        <a ui-sref="save">
+          <li class="click-selection basket-select">
+            Save
+          </li>
+        </a>
+        <a ui-sref="baskets">
+          <li class="click-selection inbox-select">
+            Baskets
+          </li>
+        </a>
+      </ul>
+    </section>
+
+    <ui-view>
+
+  </div>
+  <!-- <div>Icons made by SimpleIcon from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>         is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div> -->
+</body>
+</html>
+
+    <!-- <section name="selections" class="selections-name">
+      <div class="selections-wrapper">
+        <div class="click-selection friend-select highlight-select">
+          <h4>Send to Friend</h4>
+        </div>
+        <div class="click-selection basket-select">
+          <h4>Save to Basket</h4>
+        </div>
+        <div class="click-selection inbox-select">
+          <h4>Shared With Me</h4>
+        </div>
+      </div> -->
+
+
+<!--     <section name="display">
+      <div class="display-wrapper">
+        <div class="basket-list">
+          <div class="loading-screen">
+            <i class="fa fa-spinner fa-spin"></i>
+            <h3>Loading Baskets</h3>
+          </div>
+        </div>
+
+        <div class="friend-list-wrapper">
+          <div class="loading-screen">
+            <i class="fa fa-spinner fa-spin"></i>
+            <h3>Loading Friends</h3>
+          </div>
+        </div>
+
+        <div class="shared-link-list">
+          <div class="loading-screen">
+            <i class="fa fa-spinner fa-spin"></i>
+            <h3>Loading Inbox</h3>
+          </div>
+        </div>
+      </div>
+    </section> -->
