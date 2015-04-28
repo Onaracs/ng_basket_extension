@@ -11,7 +11,7 @@ chrome.runtime.onMessage.addListener(
       } 
       else if (metas[i].name === "og:description" || 
                 metas[i].getAttribute("property") === "og:description"){
-        info["descrip tion"] = metas[i].content;
+        info["description"] = metas[i].content;
       } 
       else if (metas[i].name === "og:image" || 
                 metas[i].getAttribute("property") === "og:image"){

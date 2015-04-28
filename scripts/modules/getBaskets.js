@@ -23,3 +23,28 @@ angular.module('getBaskets', [])
   }
 
 }])
+
+.factory('getLinkstoBasket', ['$http', function($http) {
+  var url = 'http://localhost:3000/ng_basket_links'
+
+  return function(basket) {
+
+    var promise = $http({
+      url: url,
+      params: {basketID: basket.id},
+      method: 'GET'
+    }).success(function(response) {
+
+      return response;
+
+    }).error(function(response) {
+
+      return {'status':false};
+
+    })
+
+    return promise;
+
+  }
+
+}])

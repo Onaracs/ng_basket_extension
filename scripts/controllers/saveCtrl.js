@@ -1,10 +1,14 @@
 angular.module('SaveCtrl', [
-  'getBaskets'
+  'getBaskets',
+  'siteInfo'
 ])
 
-.controller('SaveCtrl', ['$scope', 'getUsersBaskets', function(
-  $scope, 
-  getUsersBaskets
+.controller('SaveCtrl', ['$scope', '$http', 'getUsersBaskets', 'getSiteInfo', 'getLinkstoBasket', function(
+  $scope,
+  $http,
+  getUsersBaskets,
+  getSiteInfo,
+  getLinkstoBasket
 ) {
 
   var tabUrl,
@@ -12,60 +16,68 @@ angular.module('SaveCtrl', [
 
   // get the current URL
   chrome.tabs.getSelected(null, function(tab) {
+
       tabUrl = tab.url;
+
   });
 
   // Make call to Rails API to get a list of the users baskets
   getUsersBaskets().then(function(result) {
+
     $scope.baskets = result.data;
+
   });
 
   $scope.showSubmit = function(basket) {
+
     $scope.selectedBasket = basket;
 
     $scope.showMessage = true;
+
+    getLinkstoBasket(basket).then(function(response) {
+      console.log(response);
+    });
+
   }
 
   $scope.saveLink = function(basketID) {
+
     console.log(basketID);
-    console.log($scope.message);
 
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
       chrome.tabs.sendMessage(tabs[0].id, {ping: "Send Page Info"}, function(response) {
+
         pageInfo = response.page_info;
+        
+        console.log(pageInfo);
+        var params = ({
+          url: tabUrl,
+          uniqueId: basketID,
+          pageInfo: pageInfo
+        });
 
-        return pageInfo
-        // var req = new XMLHttpRequest(); 
+        console.log(params);
 
-        // req.open("POST", 'http://www.mybasketsapp.com/' + path);
-        // req.open("POST", 'http://localhost:3000/' + path);
-        // req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-        // req.send(JSON.stringify({url: url,
-        //                         uniqueId: id,
-        //                         message: message,
-        //                         pageInfo: pageInfo}));
+        var promise = $http({
+          url: 'http://localhost:3000/new_link',
+          params: params,
+          method: 'POST'
+        }).success(function(response) {
 
-      });  
+          return response;
+
+        }).error(function(response) {
+
+          return {'status': false};
+
+        })
+        
+      });
     }); // chrome.tabs.query
 
-    console.log(pageInfo);
 
-      // var url = 'http://localhost:3000/new_link';
-
-      // var promise = $http({
-      //   url: url,
-      //   method: 'POST'
-      // }).success(function(response) {
-
-      //   return response;
-
-      // }).error(function(response) {
-
-      //   return {'status': false};
-
-      // })
-
-      // return promise;
+    // getSiteInfo().then(function(result) {
+    //   console.log(result);
+    // })
   }
-
 }])

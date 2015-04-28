@@ -3,7 +3,8 @@ var app = angular.module('app', [
   'ShareCtrl',
   'SaveCtrl',
   'BasketCtrl',
-  'getBaskets'
+  'getBaskets',
+  'siteInfo'
 ]);
 
 app.config(function(
