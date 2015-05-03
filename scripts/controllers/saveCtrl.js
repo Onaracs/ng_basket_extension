@@ -34,8 +34,11 @@ angular.module('SaveCtrl', [
 
     $scope.showMessage = true;
 
-    getLinkstoBasket(basket).then(function(response) {
-      console.log(response);
+    getLinkstoBasket(basket.id).then(function(response) {
+      
+      $scope.links = response.data;
+      console.log($scope.links);
+
     });
 
   }
@@ -47,23 +50,25 @@ angular.module('SaveCtrl', [
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
       chrome.tabs.sendMessage(tabs[0].id, {ping: "Send Page Info"}, function(response) {
 
+        console.log(response);
         pageInfo = response.page_info;
         
         console.log(pageInfo);
-        var params = ({
+        var pageInfoJSON =  JSON.stringify({
           url: tabUrl,
           uniqueId: basketID,
           pageInfo: pageInfo
         });
 
-        console.log(params);
+        console.log(pageInfoJSON);
 
         var promise = $http({
           url: 'http://localhost:3000/new_link',
-          params: params,
-          method: 'POST'
+          method: 'POST',
+          params: pageInfoJSON,
+          headers: {'Content-Type': 'application/json'}
         }).success(function(response) {
-
+          console.log(response);
           return response;
 
         }).error(function(response) {

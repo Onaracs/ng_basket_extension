@@ -1,3 +1,6 @@
+// NOT BEING USED RIGHT NOW
+// SET UP AT A LATER TIME
+
 angular.module('siteInfo', [])
 
 .factory('getSiteInfo', function() {
