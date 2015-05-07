@@ -10,6 +10,7 @@ chrome.runtime.onMessage.addListener(
         info["title"] = metas[i].content;
       } 
       else if (metas[i].name === "og:description" || 
+                metas[i].name === "description" || 
                 metas[i].getAttribute("property") === "og:description"){
         info["description"] = metas[i].content;
       } 

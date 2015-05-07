@@ -51,21 +51,21 @@ angular.module('SaveCtrl', [
       chrome.tabs.sendMessage(tabs[0].id, {ping: "Send Page Info"}, function(response) {
 
         console.log(response);
+        console.log($scope.message);
         pageInfo = response.page_info;
-        
-        console.log(pageInfo);
-        var pageInfoJSON =  JSON.stringify({
-          url: tabUrl,
-          uniqueId: basketID,
-          pageInfo: pageInfo
-        });
-
-        console.log(pageInfoJSON);
 
         var promise = $http({
           url: 'http://localhost:3000/new_link',
+          dataType: 'json',
           method: 'POST',
-          params: pageInfoJSON,
+          params: {
+            url: tabUrl,
+            title: pageInfo.title,
+            message: $scope.message,
+            description: pageInfo.description,
+            image: pageInfo.info,
+            uniqueId: basketID
+          },
           headers: {'Content-Type': 'application/json'}
         }).success(function(response) {
           console.log(response);
@@ -79,10 +79,5 @@ angular.module('SaveCtrl', [
         
       });
     }); // chrome.tabs.query
-
-
-    // getSiteInfo().then(function(result) {
-    //   console.log(result);
-    // })
   }
 }])
