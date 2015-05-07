@@ -7,14 +7,16 @@
 
 <div class="note-container" 
       ng-if="showMessage">
+      <!-- ng-if throws off the ng-model -->
   <div class="alert">
     Save to: <p class="friend-name-alert">{{selectedBasket.name}}</p>
   </div>
-  <form class="form">
+  <form class="form" id="newLinkForm">
     <p class="text-container">
-      <textarea id="note" name="note" cols="50" rows="7" 
+      <textarea id="note" name="note" cols="50" rows="7"
+                form="newLinkForm"
                 placeholder="Add note (optional):"
-                ng-model="message">
+                ng-model="$parent.message">
         {{message}}
       </textarea>
     </p>
