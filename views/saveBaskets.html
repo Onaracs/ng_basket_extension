@@ -1,7 +1,9 @@
-<ul class="users-baskets-list">
+<ul class="baskets">
   <li ng-repeat="basket in baskets"
       ng-click="showSubmit(basket)">
-    {{basket.name}}
+      <div class="basket-list-item">
+        {{basket.name}}
+      </div>
   </li>
 </ul>
 
