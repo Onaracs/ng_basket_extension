@@ -25,8 +25,7 @@ angular.module('SaveCtrl', [
 
   getCurrentUser().then(function(result) {
 
-    console.log('current user is:')
-    console.log(result);
+    $scope.user = result.data.name;
 
   })
 
