@@ -8,26 +8,26 @@ window.onload = function() {
 
   // Send a link to a friend
   // ================================
-  $('.friend-list-wrapper').on('click', '.friend-container', function() {
-    $('.friend-container').removeClass('send-friend-select');
-    $(this).addClass('send-friend-select');
-    var friendName = $(this).text();
-    var friendId = $(this).attr('value');
+  // $('.friend-list-wrapper').on('click', '.friend-container', function() {
+  //   $('.friend-container').removeClass('send-friend-select');
+  //   $(this).addClass('send-friend-select');
+  //   var friendName = $(this).text();
+  //   var friendId = $(this).attr('value');
 
-    // $(this).addClass('highlight'),
+  //   // $(this).addClass('highlight'),
 
-    $('.friend-name-alert').text(friendName)
+  //   $('.friend-name-alert').text(friendName)
 
-    $('.send-btn-button').on('click', function(){
-      if (area.value.length > maxLength){
-        $('.alert').text('Message cannot be greater than 64 characters!').css('color', 'red');
-      } else {
-        messageText = $('textarea#note').val();
-        sendData('sent_link', friendId, messageText, tabUrl)
-        $('.alert').text('Link sent to ' + friendName).css('color', 'black');
-      };
-    });
-  })
+  //   $('.send-btn-button').on('click', function(){
+  //     if (area.value.length > maxLength){
+  //       $('.alert').text('Message cannot be greater than 64 characters!').css('color', 'red');
+  //     } else {
+  //       messageText = $('textarea#note').val();
+  //       sendData('sent_link', friendId, messageText, tabUrl)
+  //       $('.alert').text('Link sent to ' + friendName).css('color', 'black');
+  //     };
+  //   });
+  // })
 };
 
 function sendData(path, id, message, url){

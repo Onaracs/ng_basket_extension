@@ -1,7 +1,35 @@
 <ul class="friends">
-  <li ng-repeat="friend in friends | orderBy: 'name'">
+  <li ng-repeat="friend in friends | orderBy: 'name'"
+      ng-click="showSubmit(friend)">
     <div class="friend-list-item">
       {{friend.name}}
     </div>
   </li>
 </ul>
+
+<div class="note-container" 
+      ng-if="showMessage">
+      <!-- ng-if throws off the ng-model -->
+  <div class="alert">
+    Send to: <p class="friend-name-alert">{{selectedFriend.name}}</p>
+  </div>
+  <form class="form" id="newLinkForm">
+    <p class="text-container">
+      <textarea id="note" name="note" cols="50" rows="7"
+                form="newLinkForm"
+                placeholder="Add note:"
+                ng-model="$parent.message">
+        {{message}}
+      </textarea>
+    </p>
+  </form>
+  <div class="character-count">
+    <p id="message"></p>
+  </div>
+  <div class="send-btn"
+        ng-click="saveLink(selectedFriend)">
+    <div class="send-btn-button">
+      <p class="btn-text">Send</p>
+    </div>
+  </div>
+</div>
