@@ -1,14 +1,16 @@
 angular.module('SaveCtrl', [
   'getBaskets',
-  'siteInfo'
+  'siteInfo',
+  'currentUser'
 ])
 
-.controller('SaveCtrl', ['$scope', '$http', 'getUsersBaskets', 'getSiteInfo', 'getLinkstoBasket', function(
+.controller('SaveCtrl', ['$scope', '$http', 'getUsersBaskets', 'getSiteInfo', 'getLinkstoBasket', 'getCurrentUser', function(
   $scope,
   $http,
   getUsersBaskets,
   getSiteInfo,
-  getLinkstoBasket
+  getLinkstoBasket,
+  getCurrentUser
 ) {
 
   var tabUrl,
@@ -20,6 +22,13 @@ angular.module('SaveCtrl', [
       tabUrl = tab.url;
 
   });
+
+  getCurrentUser().then(function(result) {
+
+    console.log('current user is:')
+    console.log(result);
+
+  })
 
   // Make call to Rails API to get a list of the users baskets
   getUsersBaskets().then(function(result) {

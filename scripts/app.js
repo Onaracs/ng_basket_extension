@@ -2,7 +2,6 @@ var app = angular.module('app', [
   'ui.router',
   'ShareCtrl',
   'SaveCtrl',
-  'BasketCtrl',
   'getBaskets',
   'siteInfo'
 ]);
@@ -25,11 +24,6 @@ app.config(function(
 	    controller: 'SaveCtrl',
 	    templateUrl: 'views/saveBaskets.html'
 	  })
-    .state('baskets', {
-      url: '/baskets',
-      controller: 'BasketCtrl',
-      templateUrl: 'views/myBaskets.html'
-    })
 })
 
 app.controller('toggleCtrl', ['$scope', function($scope) {
