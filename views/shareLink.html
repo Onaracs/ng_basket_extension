@@ -1,5 +1,7 @@
-<ul>
+<ul class="friends">
   <li ng-repeat="friend in friends | orderBy: 'name'">
-    {{friend.name}}
+    <div class="friend-list-item">
+      {{friend.name}}
+    </div>
   </li>
 </ul>

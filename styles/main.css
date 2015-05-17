@@ -11,12 +11,12 @@ body {
 }
 
 .header-title {
+  border-bottom: 1px solid #ccc;
   height: 32px;
   width: 100%;
-  background-color: #90EE90;
+  background-color: #fff;
   margin-top: 0;
-  padding-top: 5px;
-  padding-bottom: 16px;
+  padding: 5px 0;
   text-align: center;
   font-size: 18px;
   font-family: 'Lato';
@@ -24,7 +24,7 @@ body {
 
 .header-title a {
   text-decoration: none;
-  color: black;
+  color: #90EE90;
   outline: none;
 }
 

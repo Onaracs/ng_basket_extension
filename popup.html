@@ -25,19 +25,20 @@
   <script type="text/javascript" src="scripts/modules/getBaskets.js"></script>
   <script type="text/javascript" src="scripts/modules/getFriends.js"></script>
   <script type="text/javascript" src="scripts/modules/siteInfo.js"></script>
+  <script type="text/javascript" src="scripts/modules/currentUser.js"></script>
   <!-- <script language='javascript' src='background.js'></script>
   <script language='javascript' src='popup.js'></script> -->
 </head>
 
-<body ng-controller="toggleCtrl">
+<body>
   <div class="container">
 
     <section name="header">
       <div class="header-title">
         <a href="http://www.mybasketsapp.com" target="_newtab">
-          <img src="icons/basketblack128.png">
+          <!-- <img src="icons/basketblack128.png"> -->
           <h3>Basket</h3>
-          <h5>www.mybasketsapp.com</h5>
+          <!-- <h5>www.mybasketsapp.com</h5> -->
         </a>
       </div>
     </section>
@@ -45,17 +46,19 @@
     <section name="navbar" class="navigation">
       <ul>
         <a ui-sref="share">
-          <li class="click-selection friend-select highlight-select">
-              Share
+          <li class="click-selection friend-select highlight-select"
+          ui-sref-active="active">
+              Friends
           </li>
         </a>
-        <a ui-sref="save">
+        <!-- <a ui-sref="save">
           <li class="click-selection basket-select">
             Save
           </li>
-        </a>
-        <a ui-sref="baskets">
-          <li class="click-selection inbox-select">
+        </a> -->
+        <a ui-sref="save">
+          <li class="click-selection basket-select"
+              ui-sref-active="active">
             Baskets
           </li>
         </a>

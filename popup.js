@@ -6,27 +6,6 @@ window.onload = function() {
       console.log(tabUrl);
   });
 
-  // Save a link to a basket
-  // ================================
-  // $('.basket-list').on('click', '.basket-click', function(){
-  //   $('.basket-click').removeClass('send-basket-select');
-  //   $(this).addClass('send-basket-select');
-  //   var folderName = $(this).text();
-  //   var folderId = $(this).attr('value');
-    
-  //   $('.basket-name-alert').text(folderName)
-
-  //   $('.send-btn-button').on('click', function(){
-  //     if (area.value.length > maxLength){
-  //       $('.alert').text('Message cannot be greater than 64 characters!').css('color', 'red');
-  //     } else {
-  //       messageText = $('textarea#note').val();
-  //       sendData('new_link', folderId, messageText, tabUrl)
-  //       $('.alert').text('Link saved to ' + folderName).css('color', 'black');
-  //     };
-  //   });
-  // })
-
   // Send a link to a friend
   // ================================
   $('.friend-list-wrapper').on('click', '.friend-container', function() {
