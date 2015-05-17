@@ -1,10 +1,10 @@
-angular.module('SaveCtrl', [
+angular.module('BasketCtrl', [
   'getBaskets',
   'siteInfo',
   'currentUser'
 ])
 
-.controller('SaveCtrl', ['$scope', '$http', 'getUsersBaskets', 'getSiteInfo', 'getLinkstoBasket', 'getCurrentUser', function(
+.controller('BasketCtrl', ['$scope', '$http', 'getUsersBaskets', 'getSiteInfo', 'getLinkstoBasket', 'getCurrentUser', function(
   $scope,
   $http,
   getUsersBaskets,
@@ -35,6 +35,34 @@ angular.module('SaveCtrl', [
     $scope.baskets = result.data;
 
   });
+
+
+  $scope.createBasket = function() {
+
+    console.log($scope.newBasketName)
+
+    console.log('this is creating a new basket');
+    
+    var promise = $http({
+      url: 'http://localhost:3000/folders',
+      dataType: 'json',
+      method: 'POST',
+      params: {
+        name: $scope.newBasketName
+      },
+      headers: {'Content-Type': 'application/json'}
+    }).success(function(response) {
+      
+      $scope.baskets.push(response);
+      return $scope.baskets;
+
+    }).error(function(response) {
+
+      return {'status': false};
+
+    })
+
+  }; // createBasket()
 
   $scope.showSubmit = function(basket) {
 

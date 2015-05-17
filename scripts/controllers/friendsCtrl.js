@@ -1,8 +1,8 @@
-angular.module('ShareCtrl', [
+angular.module('FriendCtrl', [
   'getFriends'
 ])
 
-.controller('ShareCtrl', ['$scope', 'getUsersFriends', function(
+.controller('FriendCtrl', ['$scope', 'getUsersFriends', function(
   $scope,
   getUsersFriends
 ) {

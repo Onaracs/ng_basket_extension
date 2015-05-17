@@ -5,6 +5,18 @@
         {{basket.name}}
       </div>
   </li>
+  <li class="create-basket">
+    <div ng-click="showForm = !showForm"
+        ng-hide="showForm">
+      <p><span>+</span>New Basket</p>
+    </div>
+    <div ng-show="showForm">
+      <form ng-submit="createBasket()">
+        <input type="text" ng-model="newBasketName">
+        <input type="Submit" value="Create Basket">
+      </form>
+    </div>
+  </li>s
 </ul>
 
 <div class="note-container" 

@@ -1,7 +1,7 @@
 var app = angular.module('app', [
   'ui.router',
-  'ShareCtrl',
-  'SaveCtrl',
+  'FriendCtrl',
+  'BasketCtrl',
   'getBaskets',
   'siteInfo'
 ]);
@@ -11,39 +11,18 @@ app.config(function(
 	$urlRouterProvider
 ) {
 
-	$urlRouterProvider.otherwise('save');
+	$urlRouterProvider.otherwise('baskets');
 
 	$stateProvider
-    .state('share', {
-      url: '/share',
-      controller: 'ShareCtrl',
+    .state('friends', {
+      url: '/friends',
+      controller: 'FriendCtrl',
       templateUrl: 'views/shareLink.html'
     })
-	  .state('save', {
-	    url: '/save',
-	    controller: 'SaveCtrl',
+	  .state('baskets', {
+	    url: '/baskets',
+	    controller: 'BasketCtrl',
 	    templateUrl: 'views/saveBaskets.html'
 	  })
+
 })
-
-app.controller('toggleCtrl', ['$scope', function($scope) {
-  $scope.tab = 1;
-
-  $scope.setTab = function(tabNumber) {
-    $scope.tab = tabNumber;
-  };
-
-  $scope.isSet = function(tabNumber) {
-    return tabNumber === $scope.tab;
-  };
-}]);
-
-// basketNG.controller('linksController', ['$scope', 'sharedLinks', function($scope, sharedLinks) {
-//   // console.log(sharedLinks.request);
-//   $scope.fetchLinks = function(){
-//     console.log("Woo I've been clicked!");
-//     sharedLinks.get().then(function(response){
-//       $scope.links = response
-//     });
-//   };
-// }]);
