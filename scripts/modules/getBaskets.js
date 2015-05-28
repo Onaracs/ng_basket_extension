@@ -11,6 +11,15 @@ angular.module('getBaskets', [])
       method: 'GET'
     }).success(function(response) {
 
+      // console.log(response);
+      // array = [
+      //  {created_at: "2015-05-16T11:42:44.050-04:00",
+      //   id: 2,
+      //   name: "Test Basket",
+      //   updated_at: "2015-05-16T11:42:44.050-04:00",
+      //   user_id: 1}
+      // ]
+
       return response;
 
     }).error(function(response) {
@@ -35,6 +44,20 @@ angular.module('getBaskets', [])
       method: 'GET'
     }).success(function(response) {
 
+      // console.log(response);
+      // array = [
+      //   {
+      //     created_at: "2015-05-16T11:56:50.556-04:00",
+      //     description: "Share your videos with friends, family, and the world",
+      //     folder_id: 2,
+      //     id: 4,
+      //     image: null,
+      //     message: "Where did he go?",
+      //     title: "Hatbox Ghost Reappears in Haunted Mansion | Disneyland Resort - YouTube",
+      //     updated_at: "2015-05-16T11:56:50.556-04:00",
+      //     url: "https://www.youtube.com/watch?v=oAg3pP-PYok"
+      //   }
+      ]
       return response;
 
     }).error(function(response) {
