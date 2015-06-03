@@ -1,3 +1,9 @@
+<button>
+  <a ui-sref="friends">
+    Back
+  </a>
+</button>
+
 <ul class="friends">
   <li ng-repeat="friend in friends | orderBy: 'name'"
       ng-click="showSubmit(friend)">

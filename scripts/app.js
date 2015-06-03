@@ -26,7 +26,7 @@ app.config(function(
 	    templateUrl: 'views/baskets.html'
 	  })
     .state('links', {
-      url: '/links/:basketID',
+      url: '/links/:basketName/:basketID',
       controller: 'LinkCtrl',
       templateUrl: 'views/links.html'
     })
