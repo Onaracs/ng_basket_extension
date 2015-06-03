@@ -60,8 +60,7 @@ angular.module('LinkCtrl', ['getLinks'])
           headers: {'Content-Type': 'application/json'}
         }).success(function(response) {
           
-          console.log(response);
-          return response;
+          $scope.links = response;
 
         }).error(function(response) {
 
