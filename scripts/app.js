@@ -2,9 +2,7 @@ var app = angular.module('app', [
   'ui.router',
   'FriendCtrl',
   'BasketCtrl',
-  'LinkCtrl',
-  'getBaskets',
-  'siteInfo'
+  'LinkCtrl'
 ]);
 
 app.config(function(

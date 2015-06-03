@@ -1,12 +1,19 @@
-angular.module('LinkCtrl', [])
+angular.module('LinkCtrl', ['getLinks'])
 
-.controller('LinkCtrl', ['$scope', '$stateParams', function(
+.controller('LinkCtrl', ['$scope', '$stateParams', 'getLinkstoBasket', function(
   $scope,
-  $stateParams
+  $stateParams,
+  getLinkstoBasket
 ) {
 
   console.log($scope);
   console.log($stateParams);
+
+  getLinkstoBasket($stateParams.basketID).then(function(response) {
+
+    console.log(response);
+
+  })
 
   $scope.saveLink = function(basketID) {
 
