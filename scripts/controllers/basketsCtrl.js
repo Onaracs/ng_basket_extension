@@ -13,16 +13,6 @@ angular.module('BasketCtrl', [
   getCurrentUser
 ) {
 
-  var tabUrl,
-      pageInfo;
-
-  // get the current URL
-  chrome.tabs.getSelected(null, function(tab) {
-
-      tabUrl = tab.url;
-
-  });
-
   getCurrentUser().then(function(result) {
 
     $scope.user = result.data.name;
@@ -59,19 +49,5 @@ angular.module('BasketCtrl', [
     })
 
   }; // createBasket()
-
-  // $scope.showSubmit = function(basket) {
-
-  //   $scope.selectedBasket = basket;
-
-  //   $scope.showMessage = true;
-
-  //   getLinkstoBasket(basket.id).then(function(response) {
-      
-  //     $scope.links = response.data;
-
-  //   });
-
-  // }
 
 }])

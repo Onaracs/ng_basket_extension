@@ -4,12 +4,30 @@
   </a>
 </button>
 
-<h2>This is where the links will show up!</h2>
+<h2>{{basketName}}</h2>
+
+<ul class="links">
+
+  <li ng-repeat="link in links">
+
+    <a target="_blank" sref="{{link.url}}">
+
+      <div class="link-list-item">
+
+        {{link.title}}
+
+      </div>
+
+    </a>
+
+  </li>
+
+</ul> <!-- baskets -->
 
 <div class="note-container">
 
   <div class="alert">
-    Save to: <p class="friend-name-alert">{{selectedBasket.name}}</p>
+    Save to: <p class="friend-name-alert">{{basketName}}</p>
   </div>
 
   <form class="form" id="newLinkForm">
@@ -28,7 +46,7 @@
   </div>
 
   <div class="send-btn"
-        ng-click="saveLink(selectedBasket.id)">
+        ng-click="saveLink(basketID)">
     <div class="send-btn-button">
       <p class="btn-text">Send</p>
     </div>
