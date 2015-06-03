@@ -2,6 +2,7 @@ var app = angular.module('app', [
   'ui.router',
   'FriendCtrl',
   'BasketCtrl',
+  'LinkCtrl',
   'getBaskets',
   'siteInfo'
 ]);
@@ -25,7 +26,7 @@ app.config(function(
 	    templateUrl: 'views/baskets.html'
 	  })
     .state('links', {
-      url: '/links',
+      url: '/links/:basketID',
       controller: 'LinkCtrl',
       templateUrl: 'views/links.html'
     })

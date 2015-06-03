@@ -1,47 +1,54 @@
+<section name="navbar" class="navigation">
+  <ul>
+    <a ui-sref="friends">
+      <li class="click-selection friend-select highlight-select"
+      ui-sref-active="active">
+          Friends
+      </li>
+    </a>
+    <a ui-sref="baskets">
+      <li class="click-selection basket-select"
+          ui-sref-active="active">
+        Baskets
+      </li>
+    </a>
+  </ul>
+</section>
+
 <ul class="baskets">
-  <li ng-repeat="basket in baskets"
-      ng-click="showSubmit(basket)">
+
+  <li ng-repeat="basket in baskets | orderBy: 'name'">
+
+    <a ui-sref="links({basketID: basket.id})">
+
       <div class="basket-list-item">
+
         {{basket.name}}
+
       </div>
+
+    </a>
+
   </li>
+
   <li class="create-basket">
+
     <div ng-click="showForm = !showForm"
         ng-hide="showForm">
+      
       <p><span>+</span>New Basket</p>
+
     </div>
+
     <div ng-show="showForm">
+
       <form ng-submit="createBasket()">
         <input type="text" ng-model="newBasketName">
         <input type="Submit" value="Create Basket">
       </form>
-    </div>
-  </li>
-</ul>
 
-<div class="note-container" 
-      ng-if="showMessage">
-      <!-- ng-if throws off the ng-model -->
-  <div class="alert">
-    Save to: <p class="friend-name-alert">{{selectedBasket.name}}</p>
-  </div>
-  <form class="form" id="newLinkForm">
-    <p class="text-container">
-      <textarea id="note" name="note" cols="50" rows="7"
-                form="newLinkForm"
-                placeholder="Add note:"
-                ng-model="$parent.message">
-        {{message}}
-      </textarea>
-    </p>
-  </form>
-  <div class="character-count">
-    <p id="message"></p>
-  </div>
-  <div class="send-btn"
-        ng-click="saveLink(selectedBasket.id)">
-    <div class="send-btn-button">
-      <p class="btn-text">Send</p>
     </div>
-  </div>
-</div>
+
+  </li>
+
+</ul> <!-- baskets -->

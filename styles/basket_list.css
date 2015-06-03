@@ -9,6 +9,14 @@
   padding: 0;
 }
 
+.baskets a {
+  color: #999;
+  text-decoration: none;
+}
+.baskets a:hover {
+  color: #fff;
+}
+
 .baskets li,
 .friends li {
     cursor: pointer;
