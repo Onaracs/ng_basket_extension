@@ -16,7 +16,7 @@ app.config(function(
     .state('friends', {
       url: '/friends',
       controller: 'FriendCtrl',
-      templateUrl: 'views/shareLink.html'
+      templateUrl: 'views/friends.html'
     })
 	  .state('baskets', {
 	    url: '/baskets',

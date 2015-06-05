@@ -1,20 +1,3 @@
-<section name="navbar" class="navigation">
-  <ul>
-    <a ui-sref="friends">
-      <li class="click-selection friend-select highlight-select"
-      ui-sref-active="active">
-          Friends
-      </li>
-    </a>
-    <a ui-sref="baskets">
-      <li class="click-selection basket-select"
-          ui-sref-active="active">
-        Baskets
-      </li>
-    </a>
-  </ul>
-</section>
-
 <ul class="baskets">
 
   <li ng-repeat="basket in baskets | orderBy: 'name'">

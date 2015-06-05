@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="/styles/display.css">
   <link rel="stylesheet" href="/styles/nav.css">
   <link rel="stylesheet" href="/styles/basket_list.css">
+  <link rel="stylesheet" href="/styles/links.css">
 
   <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
@@ -42,6 +43,23 @@
           <!-- <h5>www.mybasketsapp.com</h5> -->
         </a>
       </div>
+    </section>
+
+    <section name="navbar" class="navigation">
+      <ul>
+        <a ui-sref="friends">
+          <li class="click-selection friend-select highlight-select"
+          ui-sref-active="active">
+              Friends
+          </li>
+        </a>
+        <a ui-sref="baskets">
+          <li class="click-selection basket-select"
+              ui-sref-active="active">
+            Baskets
+          </li>
+        </a>
+      </ul>
     </section>
 
     <ui-view>

@@ -10,6 +10,7 @@
 }
 
 .baskets a {
+  width: 100%;
   color: #999;
   text-decoration: none;
 }
@@ -21,7 +22,6 @@
 .friends li {
     cursor: pointer;
     list-style: none;
-    padding: 10px 0 10px 25px;
     font-size: 16px;
 }
 .baskets li:hover, 
@@ -33,6 +33,7 @@
 
 .basket-list-item,
 .friend-list-item {
+  padding: 10px 0 10px 25px;
   border-top: 1px solid #212121;
   border-bottom: 1px solid #0a0c0e;
 

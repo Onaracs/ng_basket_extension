@@ -1,0 +1,8 @@
+.links {
+  padding: 0;
+}
+
+.links li {
+  list-style: none;
+  width: 100%;
+}

@@ -8,7 +8,7 @@
 
 <ul class="links">
 
-  <li ng-repeat="link in links">
+  <li ng-repeat="link in links | orderBy: '-created_at'">
 
     <a target="_blank" sref="{{link.url}}">
 
