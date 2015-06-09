@@ -1,4 +1,6 @@
-angular.module('LinkCtrl', ['getLinks'])
+angular.module('LinkCtrl', [
+  'getLinks'
+])
 
 .controller('LinkCtrl', ['$scope', '$stateParams', '$http', 'getLinkstoBasket', function(
   $scope,
