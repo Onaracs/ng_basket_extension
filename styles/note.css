@@ -2,13 +2,11 @@
             Note Container
 ====================================*/
 .note-container {
-  position: fixed;
-  bottom: 0;
-  height: 159px;
-  width: 100%;
+  float: right;
+  height: 310px;
+  width: 25%;
   background-color: #ececea;
-  border: 1px solid #dddddd;
-  clear: both;
+  border-left: 1px solid #dddddd;
   /*Glow for the form input
   border: 1px solid #90EE90;*/
 }

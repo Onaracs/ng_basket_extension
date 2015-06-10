@@ -35,32 +35,39 @@
 <body>
   <div class="container">
 
-    <section name="header">
-      <div class="header-title">
-        <a href="http://www.mybasketsapp.com" target="_newtab">
-          <!-- <img src="icons/basketblack128.png"> -->
-          <h3>Basket</h3>
-          <!-- <h5>www.mybasketsapp.com</h5> -->
-        </a>
-      </div>
-    </section>
-
-    <section name="navbar" class="navigation">
+    <div class="navbar-inner">
+      <h2 class="brand"><a href="http://www.mybasketsapp.com" target="_newtab">Basket</a></h2>
       <ul>
-        <a ui-sref="friends">
-          <li class="click-selection friend-select highlight-select"
-          ui-sref-active="active">
-              Friends
-          </li>
-        </a>
-        <a ui-sref="baskets">
-          <li class="click-selection basket-select"
-              ui-sref-active="active">
-            Baskets
-          </li>
-        </a>
+
+          <a ui-sref="baskets">
+
+            <li class="click-selection basket-select"
+                ng-class="{active: activeType === 'baskets'}"
+                ng-click="activeType = 'baskets'"
+                ui-sref-active="active">
+              Baskets
+            </li>
+
+          </a>
+
+        </li>
+
+        <li>
+
+          <a ui-sref="friends">
+            <li class="click-selection friend-select highlight-select"
+                ng-class="{active: activeType === 'friends'}"
+                ng-click="activeType = friends"
+                ui-sref-active="active">
+                Friends
+            </li>
+          </a>
+
+        </li>
+
       </ul>
-    </section>
+
+    </div> <!-- navbar-inner -->
 
     <ui-view>
 

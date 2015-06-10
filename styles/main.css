@@ -1,13 +1,13 @@
 body {
   font-family: 'Montserrat', 'sans-serif';
   /*width: 440px;*/
-  width: 250px;
+  width: 550px;
   /*background-color: #90EE90;*/
   margin: 0;
 }
 
 .container {
-  height: 415px;
+  height: 350px;
 }
 
 .header-title {

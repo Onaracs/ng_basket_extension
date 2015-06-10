@@ -23,7 +23,7 @@ app.config(function(
 	    controller: 'BasketCtrl',
 	    templateUrl: 'views/baskets.html'
 	  })
-    .state('links', {
+    .state('baskets.links', {
       url: '/links/:basketName/:basketID',
       controller: 'LinkCtrl',
       templateUrl: 'views/links.html'

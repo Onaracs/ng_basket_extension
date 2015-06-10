@@ -13,6 +13,8 @@ angular.module('BasketCtrl', [
   getCurrentUser
 ) {
 
+  $scope.activeType = 'baskets';
+
   getCurrentUser().then(function(result) {
 
     $scope.user = result.data.name;

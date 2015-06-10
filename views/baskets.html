@@ -2,7 +2,7 @@
 
   <li ng-repeat="basket in baskets | orderBy: 'name'">
 
-    <a ui-sref="links({basketName: basket.name,
+    <a ui-sref="basket.links({basketName: basket.name,
                         basketID: basket.id})">
 
       <div class="basket-list-item">
@@ -36,3 +36,5 @@
   </li>
 
 </ul> <!-- baskets -->
+
+<div ui-view></div>
