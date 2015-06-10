@@ -1,5 +1,7 @@
 .links {
   padding: 0;
+  float: left;
+  width: 70%;
 }
 
 .links li {

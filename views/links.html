@@ -1,33 +1,30 @@
-<button>
-  <a ui-sref="baskets">
-    Back
-  </a>
-</button>
+<div class="link-wrapper-inner">
 
-<h2>{{basketName}}</h2>
+  <h2>{{basketName}}</h2>
 
-<ul class="links">
+  <ul class="links">
 
-  <li ng-repeat="link in links | orderBy: '-created_at'">
+    <li ng-repeat="link in links | orderBy: '-created_at'">
 
-    <a target="_blank" sref="{{link.url}}">
+      <a target="_blank" sref="{{link.url}}">
 
-      <div class="link-list-item">
+        <div class="link-list-item">
 
-        {{link.title}}
+          {{link.title}}
 
-      </div>
+        </div>
 
-    </a>
+      </a>
 
-  </li>
+    </li>
 
-</ul> <!-- baskets -->
+  </ul> <!-- baskets -->
 
-<div class="note-container">
-  <h2>URL</h2>
-  <h2>Title</h2>
-  <h2>Note</h2>
+<!--   <div class="note-container">
+    <h2>URL</h2>
+    <h2>Title</h2>
+    <h2>Note</h2>
+  </div> -->
 </div>
 
 <!-- <div class="note-container">

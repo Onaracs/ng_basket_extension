@@ -1,8 +1,28 @@
 <ul class="baskets">
 
+  <li class="create-basket">
+
+    <div ng-click="showForm = !showForm"
+        ng-hide="showForm">
+      
+      <p><span>+</span>New Basket</p>
+
+    </div>
+
+<!--     <div ng-show="showForm">
+
+      <form ng-submit="createBasket()">
+        <input type="text" ng-model="newBasketName">
+        <input type="Submit" value="Create Basket">
+      </form>
+
+    </div> -->
+
+  </li>
+
   <li ng-repeat="basket in baskets | orderBy: 'name'">
 
-    <a ui-sref="basket.links({basketName: basket.name,
+    <a ui-sref="baskets.links({basketName: basket.name,
                         basketID: basket.id})">
 
       <div class="basket-list-item">
@@ -15,26 +35,6 @@
 
   </li>
 
-  <li class="create-basket">
-
-    <div ng-click="showForm = !showForm"
-        ng-hide="showForm">
-      
-      <p><span>+</span>New Basket</p>
-
-    </div>
-
-    <div ng-show="showForm">
-
-      <form ng-submit="createBasket()">
-        <input type="text" ng-model="newBasketName">
-        <input type="Submit" value="Create Basket">
-      </form>
-
-    </div>
-
-  </li>
-
 </ul> <!-- baskets -->
 
-<div ui-view></div>
+<div class="link-wrapper" ui-view></div>
