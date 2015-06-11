@@ -1,8 +1,9 @@
 angular.module('SaveCtrl', [])
 
-.controller('SaveCtrl', ['$scope', '$http', function(
+.controller('SaveCtrl', ['$scope', '$http', '$stateParams', function(
   $scope,
-  $http
+  $http,
+  $stateParams
 ) {
 
   var tabUrl,
