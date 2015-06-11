@@ -18,6 +18,18 @@
 
     </div> -->
 
+  <li>
+
+    <a ui-sref="basket.shared">
+
+      <div class="basket-list-item">
+        Inbox
+      </div>
+
+    </a>
+
+  </li>
+
   </li>
 
   <li ng-repeat="basket in baskets | orderBy: 'name'"
@@ -38,4 +50,4 @@
 
 </ul> <!-- baskets -->
 
-<div class="link-wrapper" ui-view></div>
+<div ui-view></div>

@@ -1,22 +1,40 @@
-// NOT BEING USED RIGHT NOW
-// SET UP AT A LATER TIME
-
 angular.module('siteInfo', [])
 
-.factory('getSiteInfo', function() {
+.factory('getSiteInfo', ['$q', function($q) {
   console.log("getting in this")
 
-  return function() {
+  var getTabUrl = function() {
 
-    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-      chrome.tabs.sendMessage(tabs[0].id, {ping: "Send Page Info"}, function(response) {
-        pageInfo = response.page_info;
+    var deferred = $q.defer();
 
-      });
-      return pageInfo;
-    }); // chrome.tabs.query
+    // deferred.resolve(chrome.tabs.getSelected(null, function(tab) {
+    deferred.resolve(chrome.tabs.query({active: true}, function(tab) {
+        
+        console.log(tab);
+        return tab;
 
-    return pageInfo;
+    }));
+
+    console.log(deferred.promise);
+    return deferred.promise;
+
   }
 
-})
+  return {
+    getTabUrl: getTabUrl
+  };
+
+  // return function() {
+
+  //   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+  //     chrome.tabs.sendMessage(tabs[0].id, {ping: "Send Page Info"}, function(response) {
+  //       pageInfo = response.page_info;
+
+  //     });
+  //     return pageInfo;
+  //   }); // chrome.tabs.query
+
+  //   return pageInfo;
+  // }
+
+}])
