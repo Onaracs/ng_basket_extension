@@ -2,7 +2,8 @@ var app = angular.module('app', [
   'ui.router',
   'FriendCtrl',
   'BasketCtrl',
-  'LinkCtrl'
+  'LinkCtrl',
+  'SaveCtrl'
 ]);
 
 app.config(function(
@@ -23,10 +24,10 @@ app.config(function(
 	    controller: 'BasketCtrl',
 	    templateUrl: 'views/baskets.html'
 	  })
-    .state('baskets.links', {
+    .state('baskets.save', {
       url: '/links/:basketName/:basketID',
-      controller: 'LinkCtrl',
-      templateUrl: 'views/links.html'
+      controller: 'SaveCtrl',
+      templateUrl: 'views/note.html'
     })
 
 })

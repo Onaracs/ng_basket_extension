@@ -20,9 +20,10 @@
 
   </li>
 
-  <li ng-repeat="basket in baskets | orderBy: 'name'">
+  <li ng-repeat="basket in baskets | orderBy: 'name'"
+      ui-sref-active="active">
 
-    <a ui-sref="baskets.links({basketName: basket.name,
+    <a ui-sref="baskets.save({basketName: basket.name,
                         basketID: basket.id})">
 
       <div class="basket-list-item">

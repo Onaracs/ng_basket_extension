@@ -22,6 +22,7 @@
   <script type="text/javascript" src="scripts/controllers/basketsCtrl.js"></script>
   <script type="text/javascript" src="scripts/controllers/friendsCtrl.js"></script>
   <script type="text/javascript" src="scripts/controllers/linksCtrl.js"></script>
+  <script type="text/javascript" src="scripts/controllers/saveCtrl.js"></script>
 
   <script type="text/javascript" src="scripts/modules/currentUser.js"></script>
   <script type="text/javascript" src="scripts/modules/getBaskets.js"></script>
@@ -41,29 +42,17 @@
       </h2>
       <ul>
 
-          <a ui-sref="baskets">
+        <li class="click-selection basket-select">
 
-            <li class="click-selection basket-select"
-                ng-class="{active: activeType === 'baskets'}"
-                ng-click="activeType = 'baskets'"
-                ui-sref-active="active">
-              Baskets
-            </li>
-
-          </a>
+          <a ui-sref="baskets">My Baskets</a>
 
         </li>
 
-        <li>
+        </li>
 
-          <a ui-sref="friends">
-            <li class="click-selection friend-select highlight-select"
-                ng-class="{active: activeType === 'friends'}"
-                ng-click="activeType = friends"
-                ui-sref-active="active">
-                Friends
-            </li>
-          </a>
+        <li class="click-selection friend-select highlight-select">
+
+          <a ui-sref="friends">Friends</a>
 
         </li>
 
