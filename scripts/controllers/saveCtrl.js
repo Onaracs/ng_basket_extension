@@ -18,25 +18,11 @@ angular.module('SaveCtrl', ['siteInfo'])
 
     console.log(response);
     $scope.url = response.url;
+    $scope.title = response.title;
 
   })
-  console.log($scope);
-  // getSiteInfo().getTabUrl().then(function(response) {
 
-  //   console.log(response);
-  //   $scope.url = response;
-
-  // })
-// console.log(getSiteInfo(getTabUrl()));
-
-  // chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-  //   chrome.tabs.sendMessage(tabs[0].id, {ping: "Send Page Info"}, function(response) {
-  //     console.log(response);
-  //     $scope.title = response.page_info.title;
-  //   })
-  // })
-
-  $scope.saveLink = function(friend) {
+  $scope.saveLink = function(basketID) {
 
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
       chrome.tabs.sendMessage(tabs[0].id, {ping: "Send Page Info"}, function(response) {
@@ -50,11 +36,11 @@ angular.module('SaveCtrl', ['siteInfo'])
           method: 'POST',
           params: {
             url: tabUrl,
-            message: $scope.message,
             title: pageInfo.title,
+            message: $scope.message,
             description: pageInfo.description,
             image: pageInfo.info,
-            uniqueId: friend.id
+            uniqueId: basketID
           },
           headers: {'Content-Type': 'application/json'}
         }).success(function(response) {
@@ -69,6 +55,6 @@ angular.module('SaveCtrl', ['siteInfo'])
         
       });
     }); // chrome.tabs.query
-  }
+  } // saveLink()
 
 }])
