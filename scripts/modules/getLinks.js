@@ -47,4 +47,4 @@ angular.module('getLinks', [])
     return promise
   }
 
-}])
+}]);

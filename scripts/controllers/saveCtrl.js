@@ -13,13 +13,21 @@ angular.module('SaveCtrl', ['siteInfo'])
 
   $scope.basketID = $stateParams.basketID;
   $scope.basketName = $stateParams.basketName;
-
-  getSiteInfo.getTabUrl().then(function(response) {
+  
+  getSiteInfo().then(function(response) {
 
     console.log(response);
-    $scope.url = response;
+    $scope.url = response.url;
 
   })
+  console.log($scope);
+  // getSiteInfo().getTabUrl().then(function(response) {
+
+  //   console.log(response);
+  //   $scope.url = response;
+
+  // })
+// console.log(getSiteInfo(getTabUrl()));
 
   // chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
   //   chrome.tabs.sendMessage(tabs[0].id, {ping: "Send Page Info"}, function(response) {
@@ -27,8 +35,6 @@ angular.module('SaveCtrl', ['siteInfo'])
   //     $scope.title = response.page_info.title;
   //   })
   // })
-
-  console.log($scope);
 
   $scope.saveLink = function(friend) {
 

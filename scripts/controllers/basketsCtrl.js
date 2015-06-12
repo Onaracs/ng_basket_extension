@@ -1,15 +1,12 @@
 angular.module('BasketCtrl', [
   'getBaskets',
-  'siteInfo',
   'currentUser'
 ])
 
-.controller('BasketCtrl', ['$scope', '$http', 'getUsersBaskets', 'getSiteInfo', 'getLinkstoBasket', 'getCurrentUser', function(
+.controller('BasketCtrl', ['$scope', '$http', 'getUsersBaskets', 'getCurrentUser', function(
   $scope,
   $http,
   getUsersBaskets,
-  getSiteInfo,
-  getLinkstoBasket,
   getCurrentUser
 ) {
 
