@@ -4,22 +4,29 @@
     <p>Links Saved in {{basketName}}</p>
   </div>
 
-  <h2>Save to {{basketName}}</h2>
       
   <div class="note-container">
 
     <form ng-submit="saveLink(basketID)">
 
-      <input type="text" placeholder="{{url}}">
-      <h2>URL</h2>
+      <h2 class="basket-title">Save to: <span>{{basketName}}<span></h2>
+
+      <input type="text" value="{{url}}" ng-model="url">
+      <h2 class="heading">URL</h2>
       
-      <input type="text" placeholder="{{title}}">
-      <h2>Title</h2>
+      <input type="text" value="{{title}}" ng-model="title">
+      <h2 class="heading">Title</h2>
 
-      <input type="text" ng-model="message">
-      <h2>Note</h2>
+      <!-- <input type="textbox" ng-model="message"> -->
+      <textarea class="text-area"
+                ng-model="message"
+                rows="4" 
+                cols="40">
+                Add a note here:
+      </textarea>
+      <h2 class="heading">Note</h2>
 
-      <input type="submit" value="Save">
+      <input class="submit-btn" type="submit" value="Save">
 
     </form>
 
