@@ -1,4 +1,4 @@
-angular.module('saveShareLinkForm', ['siteInfo'])
+angular.module('saveShareLinkForm', ['siteInfo', 'showLinksButton'])
 .directive('saveShareLinkForm', ['$http', '$state', '$stateParams', 'getSiteInfo', function(
   $http,
   $state,

@@ -3,7 +3,6 @@ var app = angular.module('app', [
   'FriendCtrl',
   'BasketCtrl',
   'LinkCtrl',
-  'SaveCtrl',
   'SharedLinkCtrl'
 ]);
 
@@ -22,9 +21,9 @@ app.config(function(
     })
 	  .state('basket', {
 	    url: '/baskets',
-	    controller: 'BasketCtrl',
-	    templateUrl: 'views/baskets.html'
-	  })
+      controller: 'BasketCtrl',
+      templateUrl: 'views/baskets.html'
+    })
     .state('basket.links', {
       url: 'links/:basketName/:basketID',
       controller: 'LinkCtrl',
@@ -37,7 +36,7 @@ app.config(function(
     })
     .state('basket.save', {
       url: '/links/:basketName/:basketID',
-      controller: 'SaveCtrl',
+	    controller: 'BasketCtrl',
       templateUrl: 'views/note.html'
     })
 
