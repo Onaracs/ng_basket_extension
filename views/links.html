@@ -2,19 +2,19 @@
 
   <h2>{{basketName}}</h2>
 
-  <ul class="links">
+  <ul class="link-list">
 
     <li ng-repeat="link in links | orderBy: '-created_at'">
 
-      <a target="_blank" sref="{{link.url}}">
+      <div class="link-wrapper">
 
-        <div class="link-list-item">
+        <a target="_blank" href="{{link.url}}" class="link">
 
-          {{link.title}}
+          <p class="title">{{link.title}}</p>
 
-        </div>
+        </a>
 
-      </a>
+      </div>
 
     </li>
 

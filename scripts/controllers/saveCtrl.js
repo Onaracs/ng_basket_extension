@@ -49,8 +49,10 @@ angular.module('SaveCtrl', ['siteInfo'])
       headers: {'Content-Type': 'application/json'}
     }).success(function(response) {
 
-      console.log(response);
-      return response;
+      $state.go('basket.links', { 
+        'basketName': $scope.basketName, 
+        'basketID': $scope.basketID
+      })
 
     }).error(function(response) {
 

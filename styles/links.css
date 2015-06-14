@@ -1,10 +1,35 @@
-.links {
+.link-wrapper-inner {
+  float: left;
+  width: 65%;
+  font-size: 12px;
+  height: 310px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.link-list {
   padding: 0;
   float: left;
   width: 70%;
+  margin: 2px 10px;
 }
 
-.links li {
+.link-list li {
   list-style: none;
-  width: 100%;
+  display: block;
+}
+
+.link-wrapper {
+  position: relative;
+  margin-bottom: 20px;
+  border: 1px solid black;
+} 
+
+.link {
+  display: inline-block;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 20px;
 }
