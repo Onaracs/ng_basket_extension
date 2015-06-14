@@ -1,3 +1,14 @@
+.link-button {
+  background-color: #D3D3D3;
+  height: 40px;
+  font-size: 16px;
+  top: 10px;
+  cursor: pointer;  
+}
+.link-button:hover {
+ background-color: #696969; 
+}
+
 /*===================================
             Note Container
 ====================================*/
@@ -43,11 +54,15 @@ form input:focus {
   outline: none;
 }
 .submit-btn {
-  background-color: #90EE90;
+  background-color: #C1FAC1;
   height: 40px;
   font-size: 16px;
-  bottom: 20px;
+  bottom: 10px;
   position: absolute;
+  cursor: pointer;
+}
+.submit-btn:hover {
+  background: #90EE90;
 }
 
 

@@ -16,12 +16,17 @@ angular.module('SaveCtrl', ['siteInfo'])
   
   getSiteInfo().then(function(response) {
 
-    console.log(response);
     $scope.url = response.url;
     $scope.title = response.title;
     $scope.image = response.favIconUrl;
 
   })
+
+  $scope.viewLinks = function() {
+
+    
+    
+  }
 
   $scope.saveLink = function(basketID) {
 
