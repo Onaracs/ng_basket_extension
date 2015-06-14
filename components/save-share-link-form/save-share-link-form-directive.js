@@ -25,12 +25,6 @@ angular.module('saveShareLinkForm', ['siteInfo', 'showLinksButton'])
 
       }) // getSiteInfo()
 
-      scope.viewLinks = function() {
-
-        $state.go()
-
-      }
-
       scope.saveLink = function(basketID) {
 
         var promise = $http({

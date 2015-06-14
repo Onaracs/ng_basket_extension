@@ -13,6 +13,8 @@ angular.module('LinkCtrl', [
 
   getLinkstoBasket($stateParams.basketID).then(function(response) {
 
+    console.log(response);
+
     // $$hashKey: "object:11"
     // created_at: "2015-05-16T11:56:50.556-04:00"
     // description: "Share your videos with friends, family, and the world"

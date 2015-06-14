@@ -8,14 +8,10 @@ angular.module('showLinksButton', [])
   return {
     restrict: 'EA',
     scope: {
-
+      basketName: '=',
+      basketId: '='
     },
-    templateUrl: '/components/show-links-button/show-links-button.html',
-    link: function( scope, $ele, $attrs ) {
-      
-
-    } // link
-
+    templateUrl: '/components/show-links-button/show-links-button.html'
   } // return
 
 }]) 
