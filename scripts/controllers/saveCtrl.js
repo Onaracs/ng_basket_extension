@@ -1,7 +1,8 @@
 angular.module('SaveCtrl', ['siteInfo'])
 
-.controller('SaveCtrl', ['$scope', '$http', '$stateParams', 'getSiteInfo', function(
+.controller('SaveCtrl', ['$scope', '$state', '$http', '$stateParams', 'getSiteInfo', function(
   $scope,
+  $state,
   $http,
   $stateParams,
   getSiteInfo
@@ -24,8 +25,9 @@ angular.module('SaveCtrl', ['siteInfo'])
 
   $scope.viewLinks = function() {
 
-    
-    
+    console.log('viewing link')
+    $state.go()
+
   }
 
   $scope.saveLink = function(basketID) {

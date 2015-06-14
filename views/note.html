@@ -1,8 +1,9 @@
 <div class="note-container">
 
-  <div class="link-button"
-        ng-click="viewLinks()">
-    <p>Links Saved in this Basket</p>
+  <div class="link-button">
+    <a ui-sref="basket.links({basketName: basketName,
+                              basketID: basketID})">
+    Links Saved in this Basket</a>
   </div>
 
       

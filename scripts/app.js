@@ -25,6 +25,11 @@ app.config(function(
 	    controller: 'BasketCtrl',
 	    templateUrl: 'views/baskets.html'
 	  })
+    .state('basket.links', {
+      url: 'links/:basketName/:basketID',
+      controller: 'LinkCtrl',
+      templateUrl: 'views/links.html'
+    })
     .state('basket.shared', {
       url: '/shared',
       controller: 'SharedLinkCtrl',

@@ -2,25 +2,14 @@ angular.module('LinkCtrl', [
   'getLinks'
 ])
 
-.controller('LinkCtrl', ['$scope', '$stateParams', '$http', 'getLinkstoBasket', function(
+.controller('LinkCtrl', ['$scope', '$stateParams', 'getLinkstoBasket', function(
   $scope,
   $stateParams,
-  $http,
   getLinkstoBasket
 ) {
 
-  var tabUrl,
-      pageInfo;
-
   $scope.basketID = $stateParams.basketID;
   $scope.basketName = $stateParams.basketName;
-
-  // get the current URL
-  chrome.tabs.getSelected(null, function(tab) {
-
-      tabUrl = tab.url;
-
-  });
 
   getLinkstoBasket($stateParams.basketID).then(function(response) {
 
@@ -37,43 +26,5 @@ angular.module('LinkCtrl', [
     $scope.links = response.data;
 
   })
-
-  $scope.saveLink = function(basketID) {
-
-    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-      chrome.tabs.sendMessage(tabs[0].id, {ping: "Send Page Info"}, function(response) {
-
-        pageInfo = response.page_info;
-        console.log(pageInfo);
-        console.log(basketID);
-
-        var promise = $http({
-          url: 'http://localhost:3000/new_link',
-          dataType: 'json',
-          method: 'POST',
-          params: {
-            url: tabUrl,
-            title: pageInfo.title,
-            message: $scope.message,
-            description: pageInfo.description,
-            image: pageInfo.info,
-            uniqueId: basketID
-          },
-          headers: {'Content-Type': 'application/json'}
-        }).success(function(response) {
-          
-          $scope.links = response;
-
-        }).error(function(response) {
-
-          return {'status': false};
-
-        })
-        
-      }); // chrome.tabs.sendMessage
-
-    }); // chrome.tabs.query
-
-  } // saveLink()
 
 }])
