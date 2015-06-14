@@ -17,9 +17,6 @@ angular.module('saveShareLinkForm', ['siteInfo'])
       scope.basketID = $stateParams.basketID;
       scope.basketName = $stateParams.basketName;
 
-      console.log(scope);
-      console.log($stateParams);
-
       getSiteInfo().then(function(response) {
 
         scope.url = response.url;
@@ -30,7 +27,6 @@ angular.module('saveShareLinkForm', ['siteInfo'])
 
       scope.viewLinks = function() {
 
-        console.log('viewing link')
         $state.go()
 
       }

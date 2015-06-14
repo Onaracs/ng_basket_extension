@@ -18,16 +18,16 @@
   /*Glow for the form input
   border: 1px solid #90EE90;*/
 }
-
-.note-container .alert{
-  font-size: 16px;
-  font-family: 'Lato';
-  margin: 9px 0;
-  text-align: left;
-  padding-left: 16px;
-}
 form {
   padding-left: 10px;
+}
+form input {
+  border: 0;
+  width: 265px;
+  border-bottom: 1px solid #999;
+}
+form input:focus {
+    outline:none;
 }
 .basket-title {
   margin: 2px auto 10px auto;
@@ -41,14 +41,6 @@ form {
   color: #999;
   margin-top: 2px;
   font-size: 12px;
-}
-form input {
-  border: 0;
-  width: 265px;
-  border-bottom: 1px solid #999;
-}
-form input:focus {
-    outline:none;
 }
 .text-area {
   outline: none;
@@ -64,77 +56,3 @@ form input:focus {
 .submit-btn:hover {
   background: #90EE90;
 }
-
-
-
-
-/*
-.basket-name-alert,
-.friend-name-alert {
-  font-weight: bold;
-  display: inline;
-}
-
-.form{
-  padding: 0 15px;
-  font-family: 'Lato';
-}
-
-.text-container{
-  margin: 0;
-}
-
-#note{
-  resize: none;
-  outline: none;
-  width: 97%;
-  height: 50px;
-  font-family: 'Lato', 'sans-serif';
-  font-size: 16px;
-}
-
-#message{
-  font-family: 'Lato', 'sans-serif';
-  float: left;
-  margin-left: 16px;
-  margin-top: 8px;
-}
-
-.send-btn {
-  background-color: #b2ffb2;
-  height: 40px;
-  width: 100%;
-  border: 0;
-  position: fixed;
-  bottom: 0;
-}
-
-.send-btn img {
-  width: 24px;
-}
-
-.send-btn-button,
-.cancel-btn-button{
-  cursor: pointer;
-  padding: 12px 0;
-}
-
-.send-btn-button {
-  height: 100%;
-  width: 100%;
-  text-align: center;
-}
-.send-btn-button:hover {
-  background-color: #66ff66;
-}
-
-.btn-text{
-  font-family: 'Lato', 'sans-serif';
-  font-size: 14px;
-  display: inline-block;
-  margin: 0;
-  top: -2px;
-  position: relative;
-  left: 1px;
-  padding-bottom: 4px;
-}*/
