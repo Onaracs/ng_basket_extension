@@ -1,23 +1,17 @@
-<div ng-show="formType === 'save-link'">
-  <show-links-button
-        basket-name="basketName"
-        basket-id="basketID">
-  </show-links-button>
-</div>
 
+<show-links-button
+      basket-name="basketName"
+      basket-id="basketID">
+</show-links-button>
+s
 <div class="note-container">
       
   <div class="note-container">
 
     <form ng-submit="saveLink(basketID)">
 
-      <h2 class="basket-title"
-          ng-show="formType === save-link">Save to: 
+      <h2 class="basket-title">Save to: 
           <span>{{basketName}}<span>
-      </h2>
-      <h2 class="friend-title"
-          ng-hide="formType === save-link">Send to: 
-          <span><span>
       </h2>
 
       <input type="text" value="{{url}}" ng-model="url">
