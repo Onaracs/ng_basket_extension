@@ -9,7 +9,7 @@ angular.module('shareLinkForm', ['siteInfo'])
   return {
     restrict: 'EA',
     scope: {},
-    templateUrl: '/components/save-link-form/save-link-form.html',
+    templateUrl: '/components/share-link-form/share-link-form.html',
     link: function( scope, $ele, $attrs ) {
 
       scope.basketID = $stateParams.basketID;
@@ -23,10 +23,10 @@ angular.module('shareLinkForm', ['siteInfo'])
 
       }) // getSiteInfo()
 
-      scope.shareLink = function(basketID) {
+      scope.shareLink = function(friendID) {
 
         var promise = $http({
-          url: 'http://localhost:3000/new_link',
+          url: 'http://localhost:3000/sent_link',
           dataType: 'json',
           method: 'POST',
           params: {
@@ -35,7 +35,7 @@ angular.module('shareLinkForm', ['siteInfo'])
             message: scope.message,
             description: '',
             image: scope.image,
-            uniqueId: basketID
+            uniqueId: friendID
           },
           headers: {'Content-Type': 'application/json'}
         }).success(function(response) {

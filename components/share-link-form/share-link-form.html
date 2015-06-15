@@ -1,0 +1,31 @@
+<div class="note-container">
+      
+  <div class="note-container">
+
+    <form ng-submit="shareLink(friendID)">
+
+      <h2 class="friend-title">Send to: 
+          <span><span>
+      </h2>
+
+      <input type="text" value="{{url}}" ng-model="url">
+      <h2 class="heading">URL</h2>
+      
+      <input type="text" value="{{title}}" ng-model="title">
+      <h2 class="heading">Title</h2>
+
+      <textarea class="text-area"
+                ng-model="message"
+                rows="4" 
+                cols="40">
+                Add a note here:
+      </textarea>
+      <h2 class="heading">Note</h2>
+
+      <input class="submit-btn" type="submit" value="Save">
+
+    </form>
+
+  </div> <!-- note-container -->
+
+</div>
