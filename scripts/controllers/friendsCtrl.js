@@ -1,5 +1,6 @@
 angular.module('FriendCtrl', [
-  'getFriends'
+  'getFriends',
+  // 'shareLinkForm'
 ])
 
 .controller('FriendCtrl', ['$scope', '$http', 'getUsersFriends', function(
@@ -19,7 +20,9 @@ angular.module('FriendCtrl', [
   });
 
   getUsersFriends().then(function(response) {
+
     $scope.friends = response.data;
+
   })
 
   //SEND LINK TO FRIEND THROUGH THE ID

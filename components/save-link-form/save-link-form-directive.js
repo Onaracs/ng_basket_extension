@@ -1,5 +1,5 @@
-angular.module('saveShareLinkForm', ['siteInfo', 'showLinksButton'])
-.directive('saveShareLinkForm', ['$http', '$state', '$stateParams', 'getSiteInfo', function(
+angular.module('saveLinkForm', ['siteInfo', 'showLinksButton'])
+.directive('saveLinkForm', ['$http', '$state', '$stateParams', 'getSiteInfo', function(
   $http,
   $state,
   $stateParams,
@@ -9,11 +9,15 @@ angular.module('saveShareLinkForm', ['siteInfo', 'showLinksButton'])
   return {
     restrict: 'EA',
     scope: {
-
+      formType: '='
     },
-    templateUrl: '/components/save-share-link-form/save-share-link-form.html',
+    templateUrl: '/components/save-link-form/save-link-form.html',
     link: function( scope, $ele, $attrs ) {
       
+      scope.formType = $attrs.form
+      console.log($attrs.form);
+      console.log(scope);
+
       scope.basketID = $stateParams.basketID;
       scope.basketName = $stateParams.basketName;
 

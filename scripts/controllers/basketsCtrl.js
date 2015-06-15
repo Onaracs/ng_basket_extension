@@ -1,7 +1,7 @@
 angular.module('BasketCtrl', [
   'getBaskets',
   'currentUser',
-  'saveShareLinkForm'
+  'saveLinkForm'
 ])
 
 .controller('BasketCtrl', ['$scope', '$http', 'getUsersBaskets', 'getCurrentUser', function(
