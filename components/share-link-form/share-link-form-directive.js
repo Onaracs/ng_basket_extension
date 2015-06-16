@@ -8,12 +8,14 @@ angular.module('shareLinkForm', ['siteInfo'])
 
   return {
     restrict: 'EA',
-    scope: {},
+    scope: {
+      friend: '='
+    },
     templateUrl: '/components/share-link-form/share-link-form.html',
     link: function( scope, $ele, $attrs ) {
 
-      scope.basketID = $stateParams.basketID;
-      scope.basketName = $stateParams.basketName;
+      console.log(scope);
+      console.log(scope.friend);
 
       getSiteInfo().then(function(response) {
 
@@ -40,10 +42,11 @@ angular.module('shareLinkForm', ['siteInfo'])
           headers: {'Content-Type': 'application/json'}
         }).success(function(response) {
 
-          $state.go('basket.links', { 
-            'basketName': scope.basketName, 
-            'basketID': scope.basketID
-          })
+          // $state.go('basket.links', { 
+          //   'basketName': scope.basketName, 
+          //   'basketID': scope.basketID
+          // })
+          console.log(response);
 
         }).error(function(response) {
 

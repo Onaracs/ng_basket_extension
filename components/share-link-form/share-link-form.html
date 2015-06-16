@@ -2,10 +2,10 @@
       
   <div class="note-container">
 
-    <form ng-submit="shareLink(friendID)">
+    <form ng-submit="shareLink(friend.id)">
 
       <h2 class="friend-title">Send to: 
-          <span><span>
+          <span>{{friend.name}}<span>
       </h2>
 
       <input type="text" value="{{url}}" ng-model="url">
