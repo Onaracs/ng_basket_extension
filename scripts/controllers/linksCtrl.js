@@ -1,17 +1,17 @@
 angular.module('LinkCtrl', [
-  'getLinks'
+  'getBaskets'
 ])
 
-.controller('LinkCtrl', ['$scope', '$stateParams', 'getLinkstoBasket', function(
+.controller('LinkCtrl', ['$scope', '$stateParams', 'getBasketInfo', function(
   $scope,
   $stateParams,
-  getLinkstoBasket
+  getBasketInfo
 ) {
 
   $scope.basketID = $stateParams.basketID;
   $scope.basketName = $stateParams.basketName;
 
-  getLinkstoBasket($stateParams.basketID).then(function(response) {
+  getBasketInfo($stateParams.basketID).then(function(response) {
 
     console.log(response);
 
@@ -25,7 +25,7 @@ angular.module('LinkCtrl', [
     // title: "Hatbox Ghost Reappears in Haunted Mansion | Disneyland Resort - YouTube"
     // updated_at: "2015-05-16T11:56:50.556-04:00"
     // url: "https://www.youtube.com/watch?v=oAg3pP-PYok"
-    $scope.links = response.data;
+    $scope.links = response.data.links;
 
   })
 
