@@ -1,6 +1,4 @@
 .link-wrapper-inner {
-  float: left;
-  width: 65%;
   font-size: 12px;
   height: 310px;
   overflow-y: auto;
@@ -9,8 +7,6 @@
 
 .link-list {
   padding: 0;
-  float: left;
-  width: 70%;
   margin: 2px 10px;
 }
 
@@ -29,7 +25,20 @@
   display: inline-block;
 }
 
-.title {
+.link img {
+  float: left;
+}
+
+.link .date-time {
+  margin-left: 8px;
+  display: inline;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.link .title {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 12px;
+  float: left;
+  padding: 0 10px;
 }
