@@ -1,9 +1,9 @@
 body {
-  font-family: 'Montserrat', 'sans-serif';
   /*width: 440px;*/
-  width: 700px;
+  width: 600px;
   /*background-color: #90EE90;*/
   margin: 0;
+  background-color: #E8EBF1;
 }
 
 .container {
@@ -19,7 +19,6 @@ body {
   padding: 5px 0;
   text-align: center;
   font-size: 18px;
-  font-family: 'Lato';
 }
 
 .header-title a {
@@ -39,7 +38,6 @@ body {
   display: inline;
   letter-spacing: -2px;
   font-size: 29px;
-  font-family: 'Montserrat';
 }
 
 .header-title h4 {
@@ -47,7 +45,6 @@ body {
   font-weight: 100;
   margin-left: 5px;
   letter-spacing: -2px;  
-  font-family: 'Montserrat';
 }
 
 .header-title h5 {
