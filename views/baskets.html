@@ -1,12 +1,12 @@
 <div class="basket-wrapper">
 
-  <new-basket-button
+<!--   <new-basket-button
         show-form="showForm">
-  </new-basket-button>
+  </new-basket-button> -->
 
   <ul class="baskets">
 
-    <li>
+<!--     <li>
 
       <form form="newBasketForm"
             ng-show="showForm"
@@ -16,7 +16,7 @@
         <input type="submit" value="CREATE">
       </form>
 
-    </li>
+    </li> -->
 
     <li>
 
@@ -33,10 +33,12 @@
     </li>
 
     <li ng-repeat="basket in baskets | orderBy: 'name'"
-        ui-sref-active="active">
+        ui-sref-active="active"
+        ng-click="chooseBasket(basket)">
 
-      <a ui-sref="basket.save({basketName: basket.name,
-                          basketID: basket.id})">
+      <!-- <a ui-sref="basket.save({basketName: basket.name,
+                          basketID: basket.id})"> -->
+      
 
         <div class="basket-list-item">
 
@@ -44,7 +46,7 @@
 
         </div>
 
-      </a>
+      <!-- </a> -->
 
     </li>
 
@@ -52,4 +54,8 @@
 
 </div>
 
-<div ui-view></div>
+<div ui-view>
+  <save-link-form
+    basket="selectedBasket">
+  </save-link-form>
+</div>

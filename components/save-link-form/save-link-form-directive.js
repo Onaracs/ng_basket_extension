@@ -9,23 +9,19 @@ angular.module('saveLinkForm', ['siteInfo', 'showLinksButton'])
   return {
     restrict: 'EA',
     scope: {
-      formType: '='
+      basket: '='
     },
     templateUrl: '/components/save-link-form/save-link-form.html',
     link: function( scope, $ele, $attrs ) {
       
-      scope.formType = $attrs.form
-      console.log($attrs.form);
       console.log(scope);
-
-      scope.basketID = $stateParams.basketID;
-      scope.basketName = $stateParams.basketName;
 
       getSiteInfo().then(function(response) {
 
         scope.url = response.url;
         scope.title = response.title;
         scope.image = response.favIconUrl;
+        console.log(scope);
 
       }) // getSiteInfo()
 
@@ -46,9 +42,10 @@ angular.module('saveLinkForm', ['siteInfo', 'showLinksButton'])
           headers: {'Content-Type': 'application/json'}
         }).success(function(response) {
 
+          console.log(response);
           $state.go('basket.links', { 
-            'basketName': scope.basketName, 
-            'basketID': scope.basketID
+            'basketName': response.name, 
+            'basketID': response.id
           })
 
         }).error(function(response) {
