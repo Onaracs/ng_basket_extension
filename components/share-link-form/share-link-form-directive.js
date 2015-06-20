@@ -42,7 +42,7 @@ angular.module('shareLinkForm', ['siteInfo'])
           headers: {'Content-Type': 'application/json'}
         }).success(function(response) {
 
-          $state.go('success')
+          $state.go('friends.success')
           console.log(response);
 
         }).error(function(response) {

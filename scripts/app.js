@@ -19,7 +19,7 @@ app.config(function(
       controller: 'FriendCtrl',
       templateUrl: 'views/friends.html'
     })
-    .state('success', {
+    .state('friends.success', {
       url: '/success',
       templateUrl: 'views/success.html'
     })

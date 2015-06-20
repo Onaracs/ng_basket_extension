@@ -2,7 +2,8 @@ angular.module('BasketCtrl', [
   'getBaskets',
   'currentUser',
   'saveLinkForm',
-  'newBasketButtonDirective'
+  'newBasketButtonDirective',
+  'navBar'
 ])
 
 .controller('BasketCtrl', ['$scope', '$http', 'getUsersBaskets', 'getCurrentUser', function(

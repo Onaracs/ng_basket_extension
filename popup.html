@@ -4,7 +4,6 @@
   <title>Basket</title>
   <link rel="stylesheet" href="/styles/main.css">
   <link rel="stylesheet" href="/styles/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/styles/nav.css">
   <link rel="stylesheet" href="/styles/basket_list.css">
   <link rel="stylesheet" href="/styles/links.css">
 
@@ -27,6 +26,10 @@
   <script type="text/javascript" src="scripts/modules/getLinks.js"></script>
   <script type="text/javascript" src="scripts/modules/siteInfo.js"></script>
 
+  <!-- nav bar directive -->
+  <script type="text/javascript" src="components/nav-bar/nav-bar-directive.js"></script>
+  <link rel="stylesheet" href="components/nav-bar/nav-bar.css">
+
   <!-- share/save link form directives -->
   <script type="text/javascript" src="components/share-link-form/share-link-form-directive.js"></script>
   <script type="text/javascript" src="components/save-link-form/save-link-form-directive.js"></script>
@@ -36,7 +39,7 @@
   <script type="text/javascript" src="components/show-links-button/show-links-button-directive.js"></script>
   <link rel="stylesheet" href="components/show-links-button/show-links-button.css">
 
-  <!-- show links button directives -->
+  <!-- new basket button directives -->
   <script type="text/javascript" src="components/new-basket-button/new-basket-button-directive.js"></script>
   <link rel="stylesheet" href="components/new-basket-button/new-basket-button.css">
 
@@ -45,31 +48,9 @@
 <body>
   <div class="container">
 
-    <div class="navbar-inner">
-      <h2 class="brand">
-        <a href="http://www.mybasketsapp.com" target="_newtab">Basket</a>
-      </h2>
-      <ul>
+    <nav-bar></nav-bar>
 
-        <li class="click-selection basket-select">
-
-          <a ui-sref="basket">My Baskets</a>
-
-        </li>
-
-        </li>
-
-        <li class="click-selection friend-select highlight-select">
-
-          <a ui-sref="friends">Friends</a>
-
-        </li>
-
-      </ul>
-
-    </div> <!-- navbar-inner -->
-
-    <ui-view>
+    <div ui-view></div>
 
   </div>
   <!-- <div>Icons made by SimpleIcon from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>         is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div> -->

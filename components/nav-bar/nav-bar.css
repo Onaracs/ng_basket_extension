@@ -1,0 +1,38 @@
+/*===================================
+            Navigation Area
+====================================*/
+.navbar-inner {
+  font-family: 'Montserrat';
+  height: 50px;
+  background: #90EE90;
+  color: #222;
+}
+.brand {
+  display: inline-block;
+  padding: 6px 0 0 8px;
+  margin: 0;
+  color: #222;
+  font-size: 30px;
+  text-shadow: 0;
+  font-weight: bold;
+}
+.brand a {
+  text-decoration: none;
+  color: #000;
+  outline:none;
+}
+.navbar-inner ul {
+  list-style: none;
+  float: right;
+  margin: 0;
+}
+.navbar-inner ul li {
+  display: inline-block;
+  text-transform: uppercase;
+}
+.navbar-inner ul li a {
+  color: #000;
+  text-decoration: none;
+  font-size: 14px;
+  margin-left: 10px;
+}
