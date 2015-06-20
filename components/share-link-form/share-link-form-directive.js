@@ -42,10 +42,7 @@ angular.module('shareLinkForm', ['siteInfo'])
           headers: {'Content-Type': 'application/json'}
         }).success(function(response) {
 
-          // $state.go('basket.links', { 
-          //   'basketName': scope.basketName, 
-          //   'basketID': scope.basketID
-          // })
+          $state.go('success')
           console.log(response);
 
         }).error(function(response) {

@@ -19,6 +19,10 @@ app.config(function(
       controller: 'FriendCtrl',
       templateUrl: 'views/friends.html'
     })
+    .state('success', {
+      url: '/success',
+      templateUrl: 'views/success.html'
+    })
 	  .state('basket', {
 	    url: '/baskets',
       controller: 'BasketCtrl',
