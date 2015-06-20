@@ -38,10 +38,9 @@ app.config(function(
       controller: 'SharedLinkCtrl',
       templateUrl: 'views/shared_links.html'
     })
-    // .state('basket.save', {
-    //   url: '/links/:basketName/:basketID',
-	   //  controller: 'BasketCtrl',
-    //   templateUrl: 'views/note.html'
-    // })
-
+    .state('basket.save', {
+      url: '/links/:basketName/:basketID',
+	    controller: 'BasketCtrl',
+      templateUrl: 'views/note.html'
+    })
 })

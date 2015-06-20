@@ -29,13 +29,6 @@ angular.module('BasketCtrl', [
 
   });
 
-  $scope.chooseBasket = function(basket) {
-
-    $scope.selectedBasket = basket;
-
-  }
-
-
   $scope.createBasket = function() {
     
     var promise = $http({
