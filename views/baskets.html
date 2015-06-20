@@ -1,53 +1,55 @@
-<ul class="baskets">
+<div class="basket-wrapper">
 
-  <li class="create-basket">
+  <new-basket-button
+        show-form="showForm">
+  </new-basket-button>
 
-    <div ng-click="showForm = !showForm"
-        ng-hide="showForm">
-      
-      <p><span>+</span>New Basket</p>
+  <ul class="baskets">
 
-    </div>
+    <li>
 
-<!--     <div ng-show="showForm">
-
-      <form ng-submit="createBasket()">
-        <input type="text" ng-model="newBasketName">
-        <input type="Submit" value="Create Basket">
+      <form form="newBasketForm"
+            ng-show="showForm"
+            ng-submit="createBasket()">
+        <input type="text" 
+                ng-model="newBasketName">
+        <input type="submit" value="CREATE">
       </form>
 
-    </div> -->
+    </li>
 
-  <li>
+    <li>
 
-    <a ui-sref="basket.shared">
+      <a ui-sref="basket.shared">
 
-      <div class="basket-list-item">
-        Inbox
-      </div>
+        <div class="basket-list-item">
+          Inbox
+        </div>
 
-    </a>
+      </a>
 
-  </li>
+    </li>
 
-  </li>
+    </li>
 
-  <li ng-repeat="basket in baskets | orderBy: 'name'"
-      ui-sref-active="active">
+    <li ng-repeat="basket in baskets | orderBy: 'name'"
+        ui-sref-active="active">
 
-    <a ui-sref="basket.save({basketName: basket.name,
-                        basketID: basket.id})">
+      <a ui-sref="basket.save({basketName: basket.name,
+                          basketID: basket.id})">
 
-      <div class="basket-list-item">
+        <div class="basket-list-item">
 
-        {{basket.name}}
+          {{basket.name}}
 
-      </div>
+        </div>
 
-    </a>
+      </a>
 
-  </li>
+    </li>
 
-</ul> <!-- baskets -->
+  </ul> <!-- baskets -->
+
+</div>
 
 <div ui-view></div>

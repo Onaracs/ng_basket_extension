@@ -19,6 +19,7 @@ angular.module('FriendCtrl', [
   $scope.showSubmit = function(friend) {
 
     $scope.selectedFriend = friend;
+    console.log($scope.selectedFriend);
 
   }
 

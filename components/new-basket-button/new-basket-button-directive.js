@@ -6,7 +6,7 @@ angular.module('newBasketButtonDirective', [])
       scope: {
         showForm: '='
       },
-      templateUrl: 'ng-app/components/new-basket-button/new-basket-button.html'
+      templateUrl: '/components/new-basket-button/new-basket-button.html'
     }
 
   }])

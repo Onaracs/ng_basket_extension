@@ -1,7 +1,8 @@
 angular.module('BasketCtrl', [
   'getBaskets',
   'currentUser',
-  'saveLinkForm'
+  'saveLinkForm',
+  'newBasketButtonDirective'
 ])
 
 .controller('BasketCtrl', ['$scope', '$http', 'getUsersBaskets', 'getCurrentUser', function(
@@ -11,7 +12,8 @@ angular.module('BasketCtrl', [
   getCurrentUser
 ) {
 
-  $scope.activeType = 'baskets';
+  // $scope.activeType = 'baskets';
+  $scope.showForm = false;
 
   getCurrentUser().then(function(result) {
 

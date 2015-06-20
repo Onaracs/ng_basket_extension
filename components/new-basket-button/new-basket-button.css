@@ -1,0 +1,21 @@
+.create-basket {
+  cursor: pointer;
+  top: 0;
+  font-size: 16px;
+  padding: 10px 0 10px 25px;
+} // create-basket
+.create-basket p {
+  color: #999;
+}
+.create-basket p span {
+  margin-right: 5px;
+  border: 1px solid #999;
+  padding: 1px 6px;
+  border-radius: 20px;
+}
+.create-basket p span&:hover {
+ color: #fff;
+}
+.create-basket p input[type="text"] {
+  width: 130px;
+}
