@@ -72,3 +72,8 @@
   border-top: 1px solid #111;
   border-bottom: 1px solid #0a0c0e;
 }
+
+.choose-basket {
+  margin: 0;
+  padding: 10px;
+}

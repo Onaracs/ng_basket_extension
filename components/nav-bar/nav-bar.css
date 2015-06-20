@@ -24,14 +24,22 @@
 .navbar-inner ul {
   list-style: none;
   float: right;
-  margin: 0;
+  margin: 14px 14px 0 0;
 }
 .navbar-inner ul li {
   display: inline-block;
   text-transform: uppercase;
 }
 .navbar-inner ul li a {
+  color: #8C8A8A;
+  text-decoration: none;
+  font-size: 14px;
+  margin-left: 10px;
+}
+.navbar-inner ul li a:hover {
   color: #000;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #000;
   text-decoration: none;
   font-size: 14px;
   margin-left: 10px;

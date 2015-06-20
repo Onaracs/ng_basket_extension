@@ -15,6 +15,7 @@ angular.module('saveLinkForm', ['siteInfo', 'showLinksButton'])
     link: function( scope, $ele, $attrs ) {
 
       console.log($stateParams);
+      console.log(scope);
  
       scope.basketName = $stateParams.basketName;
       scope.basketID = $stateParams.basketID;

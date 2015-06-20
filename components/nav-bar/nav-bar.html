@@ -6,21 +6,12 @@
   
   <ul>
 
-    <li class="click-selection inbox-select">
+    <li ng-repeat="tab in tabs"
+        class="click-selection">
 
-      <a ui-sref="basket.shared">Inbox</a>
-
-    </li>
-
-    <li class="click-selection basket-select">
-
-      <a ui-sref="basket">My Baskets</a>
-
-    </li>
-
-    <li class="click-selection friend-select highlight-select">
-
-      <a ui-sref="friends">Friends</a>
+      <a ui-sref="{{tab.link}}">
+        {{tab.title}}
+      </a>
 
     </li>
 
