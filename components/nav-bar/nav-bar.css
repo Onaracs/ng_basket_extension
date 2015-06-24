@@ -34,7 +34,7 @@
   color: #8C8A8A;
   text-decoration: none;
   font-size: 14px;
-  margin-left: 10px;
+  margin-left: 20px;
 }
 .navbar-inner ul li a:hover {
   color: #000;
@@ -42,5 +42,4 @@
   border-bottom: 1px solid #000;
   text-decoration: none;
   font-size: 14px;
-  margin-left: 10px;
 }

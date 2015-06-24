@@ -3,7 +3,7 @@ angular.module('getLinks', [])
 .factory('usersInbox', ['$http', function($http) {
 
   return function() {
-    var url = 'http://localhost:3000/ng_inbox_links'
+    var url = 'https://mybaskets.herokuapp.com/ng_inbox_links'
 
     var promise = $http({
       url: url,
