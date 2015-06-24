@@ -51,5 +51,36 @@
 </div> <!-- basket-wrapper -->
 
 <div ui-view>
-  <h2 class="choose-basket">Choose a basket to save this web page to:</h2>
+  <!-- <h2 class="choose-basket">Choose a basket to save this web page to:</h2> -->
+
+  <h2>Recently Saved Links</h2>
+
+  <div class="link-wrapper-inner">
+
+    <ul class="link-list">
+
+      <li ng-repeat="link in recentLinks | orderBy: '-created_at'">
+
+        <div class="link-wrapper">
+
+          <a target="_blank" href="{{link.link.url}}" class="link">
+
+            <img ng-src="{{link.link.image}}" alt="test"/>
+
+            <p class="date-time">{{link.link.created_at | date : format : timezone}}</p>
+
+            <p class="title">{{link.link.title}}</p>
+
+            <p class="message">{{link.link.message}}</p>
+
+          </a>
+
+        </div>
+
+      </li>
+
+    </ul> <!-- baskets -->
+
+  </div>
+
 </div>

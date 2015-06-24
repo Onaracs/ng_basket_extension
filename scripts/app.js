@@ -14,15 +14,6 @@ app.config(function(
 	$urlRouterProvider.otherwise('baskets');
 
 	$stateProvider
-    .state('friends', {
-      url: '/friends',
-      controller: 'FriendCtrl',
-      templateUrl: 'views/friends.html'
-    })
-    .state('friends.success', {
-      url: '/success',
-      templateUrl: 'views/success.html'
-    })
 	  .state('basket', {
 	    url: '/baskets',
       controller: 'BasketCtrl',
@@ -42,5 +33,14 @@ app.config(function(
       url: '/links/:basketName/:basketID',
 	    controller: 'BasketCtrl',
       templateUrl: 'views/note.html'
+    })
+    .state('friends', {
+      url: '/friends',
+      controller: 'FriendCtrl',
+      templateUrl: 'views/friends.html'
+    })
+    .state('friends.success', {
+      url: '/success',
+      templateUrl: 'views/success.html'
     })
 })

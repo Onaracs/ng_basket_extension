@@ -1,16 +1,18 @@
 angular.module('BasketCtrl', [
   'getBaskets',
   'currentUser',
+  'getLinks',
   'saveLinkForm',
   'newBasketButtonDirective',
   'navBar'
 ])
 
-.controller('BasketCtrl', ['$scope', '$http', 'getUsersBaskets', 'getCurrentUser', function(
+.controller('BasketCtrl', ['$scope', '$http', 'getUsersBaskets', 'getCurrentUser', 'recentlySavedLinks', function(
   $scope,
   $http,
   getUsersBaskets,
-  getCurrentUser
+  getCurrentUser,
+  recentlySavedLinks
 ) {
 
   // $scope.activeType = 'baskets';
@@ -29,10 +31,17 @@ angular.module('BasketCtrl', [
 
   });
 
+  recentlySavedLinks().then(function(response) {
+
+    console.log(response);
+    $scope.recentLinks = response.data;
+
+  })
+
   $scope.createBasket = function() {
     
     var promise = $http({
-      url: 'http://localhost:3000/folders',
+      url: 'https://mybaskets.herokuapp.com/folders',
       dataType: 'json',
       method: 'POST',
       params: {
