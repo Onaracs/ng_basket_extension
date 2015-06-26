@@ -6,7 +6,7 @@ angular.module('siteInfo', [])
 
     var deferred = $q.defer();
 
-    chrome.tabs.query({active: true}, function(tab) {
+    chrome.tabs.query({active: true, lastFocusedWindow: true}, function(tab) {
         
         deferred.resolve(tab[0]);
 
