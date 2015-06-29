@@ -10,7 +10,9 @@
   font-family: 'Lato';
   list-style: none;
   padding: 0;
-
+}
+.baskets {
+  margin-top: 39px;
 }
 ::-webkit-scrollbar {
       background-color: #333333;

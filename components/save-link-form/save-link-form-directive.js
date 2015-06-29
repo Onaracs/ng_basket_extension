@@ -31,7 +31,7 @@ angular.module('saveLinkForm', ['siteInfo', 'showLinksButton'])
       scope.saveLink = function(basketID) {
 
         var promise = $http({
-          url: 'https://mybaskets.herokuapp.com/new_link',
+          url: 'https://mybaskets.com/new_link',
           dataType: 'json',
           method: 'POST',
           params: {

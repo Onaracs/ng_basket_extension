@@ -4,7 +4,7 @@ angular.module('currentUser', [])
 
   return function() {
 
-    var url = 'https://mybaskets.herokuapp.com/ng_current_user'
+    var url = 'http://mybasketsapp.com/ng_current_user'
 
     var promise = $http({
       url: url,

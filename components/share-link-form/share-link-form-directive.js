@@ -28,7 +28,7 @@ angular.module('shareLinkForm', ['siteInfo'])
       scope.shareLink = function(friendID) {
 
         var promise = $http({
-          url: 'https://mybaskets.herokuapp.com/sent_link',
+          url: 'https://mybaskets.com/sent_link',
           dataType: 'json',
           method: 'POST',
           params: {

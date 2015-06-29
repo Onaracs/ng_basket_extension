@@ -4,7 +4,7 @@ angular.module('getBaskets', [])
 
   
   return function() {
-    var url = 'https://mybaskets.herokuapp.com/ng_users_folders';
+    var url = 'http://mybasketsapp.com/ng_users_folders';
 
     var promise = $http({
       url: url,
@@ -26,7 +26,7 @@ angular.module('getBaskets', [])
 
 .factory('getBasketInfo', ['$http', function($http) {
 
-  var url = 'https://mybaskets.herokuapp.com/ng_basket_info';
+  var url = 'http://mybasketsapp.com/ng_basket_info';
   
   return function(basketID) {
     var promise = $http({
