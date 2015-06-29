@@ -1,24 +1,24 @@
 <div class="basket-wrapper">
 
-  <!-- <new-basket-button
+  <new-basket-button
         show-form="showForm">
-  </new-basket-button> -->
+  </new-basket-button>
 
   <ul class="baskets">
 
-<!--     <li>
+    <li ng-if="showForm"
+        class="basket-form">
 
-      <form form="newBasketForm"
-            ng-show="showForm"
+<!--       <form form="newBasketForm"
             ng-submit="createBasket()">
         <input type="text" 
                 ng-model="newBasketName">
         <input type="submit" value="CREATE">
-      </form>
+      </form> -->
 
-    </li> -->
+    </li>
 
-    <li>
+<!--     <li>
 
       <a ui-sref="basket.shared">
 
@@ -28,7 +28,7 @@
 
       </a>
 
-    </li>
+    </li> -->
 
     <li ng-repeat="basket in baskets | orderBy: 'name'"
         ui-sref-active="active">

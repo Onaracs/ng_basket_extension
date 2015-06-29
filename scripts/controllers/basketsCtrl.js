@@ -41,7 +41,7 @@ angular.module('BasketCtrl', [
   $scope.createBasket = function() {
     
     var promise = $http({
-      url: 'https://mybaskets.herokuapp.com/folders',
+      url: 'https://mybaskets.com/folders',
       dataType: 'json',
       method: 'POST',
       params: {
@@ -50,6 +50,7 @@ angular.module('BasketCtrl', [
       headers: {'Content-Type': 'application/json'}
     }).success(function(response) {
       
+      console.log(response);
       $scope.baskets.push(response);
       return $scope.baskets;
 
