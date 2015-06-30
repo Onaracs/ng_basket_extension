@@ -13,9 +13,6 @@ angular.module('saveLinkForm', ['siteInfo', 'showLinksButton'])
     },
     templateUrl: '/components/save-link-form/save-link-form.html',
     link: function( scope, $ele, $attrs ) {
-
-      console.log($stateParams);
-      console.log(scope);
  
       scope.basketName = $stateParams.basketName;
       scope.basketID = $stateParams.basketID;
@@ -29,9 +26,9 @@ angular.module('saveLinkForm', ['siteInfo', 'showLinksButton'])
       }) // getSiteInfo()
 
       scope.saveLink = function(basketID) {
-
+        
         var promise = $http({
-          url: 'https://mybaskets.com/new_link',
+          url: 'https://mybaskets.herokuapp.com/new_link',
           dataType: 'json',
           method: 'POST',
           params: {

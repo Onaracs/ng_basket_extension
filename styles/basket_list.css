@@ -11,6 +11,9 @@
   list-style: none;
   padding: 0;
 }
+.friends {
+  height: 350px;
+}
 .baskets {
   margin-top: 39px;
 }

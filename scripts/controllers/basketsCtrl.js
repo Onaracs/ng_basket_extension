@@ -21,7 +21,6 @@ angular.module('BasketCtrl', [
   getCurrentUser().then(function(result) {
 
     $scope.user = result.data.name;
-
   })
 
   // Make call to Rails API to get a list of the users baskets
@@ -33,7 +32,6 @@ angular.module('BasketCtrl', [
 
   recentlySavedLinks().then(function(response) {
 
-    console.log(response);
     $scope.recentLinks = response.data;
 
   })
@@ -41,7 +39,7 @@ angular.module('BasketCtrl', [
   $scope.createBasket = function() {
     
     var promise = $http({
-      url: 'https://mybaskets.com/folders',
+      url: 'https://mybasketsapp.com/folders',
       dataType: 'json',
       method: 'POST',
       params: {

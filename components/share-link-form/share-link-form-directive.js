@@ -14,9 +14,6 @@ angular.module('shareLinkForm', ['siteInfo'])
     templateUrl: '/components/share-link-form/share-link-form.html',
     link: function( scope, $ele, $attrs ) {
 
-      console.log(scope);
-      console.log(scope.friend);
-
       getSiteInfo().then(function(response) {
 
         scope.url = response.url;
@@ -28,7 +25,7 @@ angular.module('shareLinkForm', ['siteInfo'])
       scope.shareLink = function(friendID) {
 
         var promise = $http({
-          url: 'https://mybaskets.com/sent_link',
+          url: 'https://mybaskets.herokuapp.com/sent_link',
           dataType: 'json',
           method: 'POST',
           params: {
@@ -43,7 +40,6 @@ angular.module('shareLinkForm', ['siteInfo'])
         }).success(function(response) {
 
           $state.go('friends.success')
-          console.log(response);
 
         }).error(function(response) {
 
