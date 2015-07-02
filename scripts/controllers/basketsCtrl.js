@@ -38,12 +38,16 @@ angular.module('BasketCtrl', [
 
   $scope.createBasket = function() {
     
+    var name = $scope.newBasketName;
+    console.log(name);
+
     var promise = $http({
-      url: 'https://mybasketsapp.com/folders',
+      url: 'https://mybaskets.herokuapp.com/folders',
+      // url: 'http://localhost:3000/folders',
       dataType: 'json',
       method: 'POST',
       params: {
-        name: $scope.newBasketName
+        name: name
       },
       headers: {'Content-Type': 'application/json'}
     }).success(function(response) {

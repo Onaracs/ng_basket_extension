@@ -3,7 +3,7 @@
 
   "name": "Basket",
   "short_name": "Basket",
-  "version": "1.0.1.0",
+  "version": "1.0.1.1",
   "description": "Easily save and share your favorite links through Basket!",
 
   "permissions": [
@@ -25,7 +25,7 @@
   "content_scripts": [
     {
       "matches": ["*://*/*"],
-      "js": ["scripts/jquery.min.js", "content.js"]
+      "js": ["scripts/jquery.min.js"]
     }
   ], 
 
