@@ -4,13 +4,12 @@
         show-form="showForm">
   </new-basket-button>
 
-  {{showForm}}
   <ul class="baskets">
 
     <li class="basket-form">
 
       <form form="newBasketForm"
-            ng-show="showForm"
+            ng-if="showForm"
             ng-submit="createBasket()">
         <input type="text"
                 [ng-minlength="1"]
